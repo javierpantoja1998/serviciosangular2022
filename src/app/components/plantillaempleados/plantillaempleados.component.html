@@ -1,0 +1,30 @@
+<div>
+  <h1>PLANTILLA FUNCIONES</h1>
+  <form #funcionesForm="ngForm">
+    <label>Seleccione una funcion:</label>
+    <select   #selectfunciones name="selectfunciones" multiple>
+        <option *ngFor="let fun of funciones">{{fun}}</option>
+    </select>
+    <button class="btn btn-info" (click)="buscarEmpleados()">
+      Buscar empleados
+    </button>
+  </form>
+  <table class="table table-bordered table-info" *ngIf="plantillas">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Apellidos</th>
+        <th>Funcion</th>
+        <th>Salario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let plantilla of plantillas">
+        <td>{{plantilla.idEmpleado}}</td>
+        <td>{{plantilla.apellido}}</td>
+        <td>{{plantilla.funcion}}</td>
+        <td>{{plantilla.salario}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
